@@ -15,9 +15,9 @@ const order_details = async(req,res,next) => {
 }
 
 const get_order_details = async (req, res, next) => {
-    const { user_id, order_name, order_qty, order_price } = req.body
+  
     try {
-        const isOrder = await Orders.findOne({order_name: 'Pasta'})
+        const isOrder = await Orders.find().populate('user_id',['name', 'email'])
         if (!isOrder) return res.send("Order not found!!")
         res.send(isOrder)
 
