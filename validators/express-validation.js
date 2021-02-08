@@ -11,7 +11,7 @@ exports.validateUser = [
 
     (req, res, next) => {
       const result = validationResult(req)
-    if (!result.isEmpty()) return res.json([
+      if (!result.isEmpty()) return res.json([
         { 
             err: result.array() 
         }]

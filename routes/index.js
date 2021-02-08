@@ -2,7 +2,6 @@ const userRoutes = require("./userRoutes")
 const reviewRoutes = require('./reviews')
 const express = require('express')
 const router = express.Router();
-const auth = require('../middleware/auth');
 const orderRoutes = require("./orders");
 
 router.use('/users',userRoutes)
