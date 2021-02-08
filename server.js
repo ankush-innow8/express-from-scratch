@@ -1,13 +1,15 @@
 var express = require("express")
 const connectDB = require("./config/db")
-const auth = require("./routes/auth")
+const auth = require("./middleware/auth")
+const privateAuth = require("./middleware/privateAuth")
 const indexRouter = require('./routes/index')
 require('dotenv/config')
+
 //middelware
 var app = express()
 
 app.use(express.json());
-//app.use(auth);
+app.use(privateAuth)
 connectDB();
 
 //routers
